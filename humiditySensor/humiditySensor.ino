@@ -20,7 +20,7 @@ All text above, and the splash screen must be included in any redistribution
 #include <DHT.h>
 
 #define DHTTYPE DHT11
-#define DHTPIN 7
+#define DHTPIN 1
 
 DHT dht(DHTPIN, DHTTYPE, 11); // 11 works fine for ESP8266
  

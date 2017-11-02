@@ -21,8 +21,8 @@ All text above, and the splash screen must be included in any redistribution
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
 
-#define OLED_RESET 2 //wemos
-// #define OLED_RESET 4 // uno
+//#define OLED_RESET 2 //wemos
+#define OLED_RESET 4 // uno
 Adafruit_SSD1306 display(OLED_RESET);
 
 #define NUMFLAKES 10
