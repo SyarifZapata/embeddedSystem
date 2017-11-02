@@ -17,6 +17,7 @@ float startTime = 0;
 float stopTime = 0;
 boolean programStarted = false;
 boolean screenCleared = false;
+long lastInterrupt = 0;
 
 
 void setup() {
@@ -50,14 +51,17 @@ void loop() {
 }
 
 void buttonPressed(){
-  if(stopwatchStatus == 0){
-    stopwatchStatus = 1;
-    programStarted = true;
-    startTime = millis();
-  }else{
-    stopwatchStatus = 0;
-    stopTime = millis()-startTime;
+  if ((millis()-lastInterrupt) > 100){
+    if(stopwatchStatus == 0){
+      stopwatchStatus = 1;
+      programStarted = true;
+      startTime = millis();
+    }else{
+      stopwatchStatus = 0;
+      stopTime = millis()-startTime;
+    }
   }
+  lastInterrupt = millis();
   screenCleared = false;
 }
 
